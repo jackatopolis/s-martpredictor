@@ -3,7 +3,7 @@ from joblib import load
 from pandas import DataFrame
 
 app = Flask(__name__)
-model = load('./static/data/filename.joblib')
+model = load('filename.joblib')
 # scaler = load('scaler.joblib') # loads scaler in, check filename
 
 
