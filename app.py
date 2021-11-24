@@ -9,7 +9,6 @@ model = load('./static/data/filename.joblib')
 
 # Home Page
 @app.route('/')
-@app.route('/home')
 def home():
     return render_template('home.html')
 
