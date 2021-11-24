@@ -1,20 +1,13 @@
 {% extends "base.html" %}
 {% set active_page = "About" %}
 {% block content %}
-<link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}" />
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
-<!-- About the Project -->
-<div class="aboutProject">
-   <div class="container">
-      <h2>About the Project</h2>
-      <p>For S-Mart, setting the right price for a given product is critical. If the price is too low, they will sell a large quantity of products, but their profit per unit will be low. If they set the price too high, the profit per unit will be high, but they will sell few products. To maximize profits, the business needs to find the optimum price.</p>
-      <p>Using actual sales data, we’ve built a model for the business to maximize profits based on the product, the time of year and the price. The model also takes into account the specific store to further tune the price.</p>
-   </div>
-</div>
 
 <!-- Contributors -->
 <h2>Contributors</h2>
+<hr>
 <div class="team-area sp">
    <div class="container">
       <div class="row">
@@ -78,9 +71,6 @@
                </div>
             </div>
          </div>
-         
-
-
       </div>
    </div>
 </div>
