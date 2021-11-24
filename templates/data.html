@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+{% set active_page = "Data" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Model Explanation -->
+<div class="container">
+   <h2>Raw Data</h2>
+   <hr>
+   <p>Here's a paragraph about the raw data.</p>
+</div>
+
+<div class="container">
+    <h2>Processed Data</h2>
+    <hr>
+    <p>Here's a paragraph about the processed data.</p>
+ </div>
+<script src="{{url_for('static', filename='js/data.js')}}"></script>
+{% endblock %}
