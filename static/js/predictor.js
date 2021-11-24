@@ -26,7 +26,7 @@ unique.forEach( (element) => {
     let str = "Store ";
     str += element;
     opt.text = str.toString();
-    opt.value = str.toString();
+    opt.value = element;
     dropdown.add(opt);
 }
 );
@@ -46,7 +46,7 @@ unique.forEach( (element) => {
     let str = "Product ";
     str += element;
     opt.text = str.toString();
-    opt.value = str.toString();
+    opt.value = element;
     dropdown.add(opt);
 }
 );
@@ -66,7 +66,7 @@ unique.forEach( (element) => {
     let str = "Week ";
     str += element+1;
     opt.text = str.toString();
-    opt.value = str.toString();
+    opt.value = element+1;
     dropdown.add(opt);
 }
 );
@@ -84,7 +84,10 @@ unique.forEach( (element) => {
     var dropdown = document.getElementById("selHoliday");
     var opt = document.createElement("option"); 
     opt.text = element.toString();
-    opt.value = element.toString();
+    if (element == 'Yes') {
+        opt.value = 1
+    }
+    else {opt.value = 0}
     dropdown.add(opt);
 }
 );
@@ -99,6 +102,18 @@ d3.selectAll("button").on("click", function () {
     var holiday = d3.select("#selHoliday").property("value");
     var basePrice = d3.select("#basePrice").property("value");
     var price = d3.select("#price").property("value");
+    var cost = d3.select("#cost").property("value");
+
+
+    data = {"store":store,
+            "product":product,
+            "week":week,
+            "holiday":holiday,
+            "basePrice":basePrice,
+            "price":price,
+            "cost":cost,
+            };
+
 
     fetch('/predictor', {
         method: 'POST',
@@ -110,6 +125,21 @@ d3.selectAll("button").on("click", function () {
     .then(response => response.json())
     .then(d => {
         console.log('response', d)
-        var cost = d.cost
+        var quantity = d.quantity
+        var revenue = quantity * price;
+        var costT = quantity * cost;
+        var profit = revenue - costT;
 
-        document.getElementById("output").innerHTML = "Annual Cost: $" + cost.toFixed(0);
+        document.getElementById("modelResults").innerHTML = "Estimated Quantity: " + quantity.toFixed(0) +
+        "<br>Estimated Revenue: $" + revenue.toFixed(2)+
+        "<br>Estimated Cost: $" + costT.toFixed(2)+
+        "<br>Estimated Profit: $" + profit.toFixed(2);
+    }
+    )
+}
+
+
+// function for creating graph
+
+
+);
