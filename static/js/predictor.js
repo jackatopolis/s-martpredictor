@@ -6,9 +6,6 @@ var dataset = {
         },
     "clean": 0
 };
-// 'dataset' is one object with keys
-// raw: 
-// clean: 
 
 
 
