@@ -3,8 +3,8 @@ from flask import Flask, render_template, request, jsonify
 # from pandas import DataFrame
 
 app = Flask(__name__)
-# model = load('static/data/model.pkl')
-# scaler = load('static/data/scaler.pkl')  # loads scaler in, check filename
+model = load('static/data/model.pkl')
+scaler = load('static/data/scaler.pkl')  # loads scaler in, check filename
 
 # Home Page
 
