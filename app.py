@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, jsonify
-from joblib import load
-from pandas import DataFrame
+# from joblib import load
+# from pandas import DataFrame
 
 app = Flask(__name__)
-model = load('./static/data/filename.joblib')
-# scaler = load('scaler.joblib') # loads scaler in, check filename
-
+# model = load('static/data/model.pkl')
+# scaler = load('static/data/scaler.pkl')  # loads scaler in, check filename
 
 # Home Page
+
+
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -26,43 +27,41 @@ def predictor():
 
 
 # Predict
-@app.route('/predict', methods= ['POST'])
-def predict():
-    dataInput = request.json
-    data = {}
-    try:
-        for x in range(52):
-            if int(dataInput['week']) == x+1:
-                data[globals()[f"week_of_year_{x+1}"]] = [1]
-            else: data[globals()[f"week_of_year_{x+1}"]] = [0]
-        
-        for x in range(10):
-            if int(dataInput['store']) == x and x+1 != 9:
-                data[globals()[f"Store_{x+1}"]] = [1]
-            elif x+1 != 9: data[globals()[f"Store_{x+1}"]] = [0]
-            else: continue
-
-        for x in range(3):
-            if int(dataInput['product']) == x+1:
-                data[globals()[f"Product_{x+1}"]] = [1]
-            else: data[globals()[f"Product_{x+1}"]] = [0]
-
-        if int(dataInput["price"]) < int(dataInput["basePrice"]):
-            data['promotion'] = [1]
-        else: data['promotion'] = [0]
-
-        data["Base Price"] = [int(dataInput["basePrice"])]
-        data["Price"] = [int(dataInput["price"])]
-        data["Is_Holiday"] = [int(dataInput["holiday"])]
-
-        input = DataFrame( data )
-
-    except:
-        return jsonify({'quantity':0})
-
-    output = model.predict(input)
-
-    return jsonify({"quantity":output[0]})
+@app.route('/predict')
+# , methods=['POST'])
+# def predict():
+# dataInput = request.json
+# data = {}
+# try:
+#     for x in range(52):
+#         if int(dataInput['week']) == x+1:
+#             data[globals()[f"week_of_year_{x+1}"]] = [1]
+#         else:
+#             data[globals()[f"week_of_year_{x+1}"]] = [0]
+#     for x in range(10):
+#         if int(dataInput['store']) == x and x+1 != 9:
+#             data[globals()[f"Store_{x+1}"]] = [1]
+#         elif x+1 != 9:
+#             data[globals()[f"Store_{x+1}"]] = [0]
+#         else:
+#             continue
+#     for x in range(3):
+#         if int(dataInput['product']) == x+1:
+#             data[globals()[f"Product_{x+1}"]] = [1]
+#         else:
+#             data[globals()[f"Product_{x+1}"]] = [0]
+#     if int(dataInput["price"]) < int(dataInput["basePrice"]):
+#         data['promotion'] = [1]
+#     else:
+#         data['promotion'] = [0]
+#     data["Base Price"] = [int(dataInput["basePrice"])]
+#     data["Price"] = [int(dataInput["price"])]
+#     data["Is_Holiday"] = [int(dataInput["holiday"])]
+#     input = DataFrame(data)
+# except:
+#     return jsonify({'quantity': 0})
+# output = model.predict(input)
+# return jsonify({"quantity": output[0]})
 
 
 # Data Page
