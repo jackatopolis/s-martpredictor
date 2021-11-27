@@ -43,6 +43,7 @@ def result():
         to_predict_list = list(to_predict_list.values())
         to_predict_list = list(map(int, to_predict_list))
         result = ValuePredictor(to_predict_list)
+        console.log(result)
         if int(result):
             prediction = result
         else:
