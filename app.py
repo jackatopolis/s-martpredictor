@@ -26,9 +26,29 @@ def predictor():
     return render_template('predictor.html')
 
 
+# prediction function
+def ValuePredictor(to_predict_list):
+    to_predict = np.array(to_predict_list).reshape(1, 7)
+    loaded_model = pickle.load(open("static/data/Resources/model.pkl", "rb"))
+    result = loaded_model.predict(to_predict)
+    return result[0]
+
 # Predict
-@app.route('/predict')
-# , methods=['POST'])
+
+
+@app.route('/predict', methods=['POST'])
+def result():
+    if request.method == 'POST':
+        to_predict_list = request.form.to_dict()
+        to_predict_list = list(to_predict_list.values())
+        to_predict_list = list(map(int, to_predict_list))
+        result = ValuePredictor(to_predict_list)
+        if int(result):
+            prediction = result
+        else:
+            prediction = 'Data Incomplete'
+        return render_template("predictor.html", prediction=prediction)
+
 # def predict():
 # dataInput = request.json
 # data = {}
