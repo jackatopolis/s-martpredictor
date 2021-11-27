@@ -1,5 +1,5 @@
 from flask import Flask, render_template, request, jsonify
-# from joblib import load
+from joblib import load
 # from pandas import DataFrame
 
 app = Flask(__name__)
