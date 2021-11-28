@@ -10,6 +10,7 @@ h2 {
 color: #eee;
 text-align: center;
 font-size: 22px;
+margin-top: 15px;
 }
 
 h3 {
@@ -41,9 +42,13 @@ border-color: lawngreen;
 }
 
 #inputMenu {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 #inputContainer {
-    margin-top: 10px;
+    margin-top: 20px;
+}
+
+input {
+    margin-bottom: 5px;
 }
