@@ -1,10 +1,11 @@
 from flask import Flask, render_template, request, jsonify
-# from joblib import load
-# from pandas import DataFrame
+from joblib import load
+from pandas import DataFrame
 
 app = Flask(__name__)
-# model = load('static/data/model.pkl')
-# scaler = load('static/data/scaler.pkl')  # loads scaler in, check filename
+
+model = load('static/data/Resources/model.pkl')
+scaler = load('static/data/Resources/scaler.pkl')  # loads scaler in, check filename
 
 # Home Page
 
@@ -72,11 +73,13 @@ def predict():
         data["Base Price"] = [int(dataInput["basePrice"])]
         data["Price"] = [int(dataInput["price"])]
         data["Is_Holiday"] = [int(dataInput["holiday"])]
-        input = data
-        #input = DataFrame(data)
+        input = DataFrame(data)
+        return input
     except:
         return jsonify({'quantity': 0})
+    input = scaler.transform(input)
     output = model.predict(input)
+
     return jsonify({"quantity": output[0]})
 
 
