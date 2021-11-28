@@ -6,7 +6,7 @@
 
 
 <!-- Model Explanation -->
-<div class="container">
+
    <h2>Raw Data</h2>
    <hr>
    <p>Here's a paragraph about the raw data.</p>
@@ -17,8 +17,10 @@
     <hr>
     <p>Here's a paragraph about the processed data.</p>
  </div>
-
- <table border="1" class="dataframe">
+ <div class="container">
+   <div class="table-responsive" style="overflow-x:auto; overflow-y:auto; max-height:470px; max-width: auto;">
+     <table class="table table-striped table-dark table-fit">
+ <!-- <table border="1" class="dataframe"> -->
    <thead>
      <tr style="text-align: right;">
        <th>Date</th>
@@ -42506,5 +42508,6 @@
      </tr>
    </tbody>
  </table>
+ </div>
 <script src="{{url_for('static', filename='js/data.js')}}"></script>
 {% endblock %}
