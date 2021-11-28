@@ -60,7 +60,7 @@ unique.forEach( (element) => {
 
 
 
-d3.selectAll("button").on("click", function () {
+d3.selectAll("button.p1").on("click", function () {
     
     var store = d3.select("#selStore1").property("value");
     var product = d3.select("#selProduct1").property("value");
