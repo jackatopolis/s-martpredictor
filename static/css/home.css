@@ -2,67 +2,67 @@ body {
     color: rgba(195, 7, 63, 1);
   }
   
-  body {
-    background-image: url("../images/s-mart.jpg");
-    background-attachment: fixed;
-    background-size: cover;
-    background-repeat: no-repeat;
-    font-family: "system-ui";
-  }
-  
-  .header-row {
-    padding-top: 100px;
-    padding-bottom: 50px;
-  }
-  
-  .r1 {
-    background-color: rgba(0, 0, 0, 0.6);
-  }
-  
-  .link-row {
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.6);
-  }
-  
-  .link {
-    color: rgba(195, 7, 63, 1);
-    text-decoration: none;
-  }
-  
-  .link h3 {
-    font-size: 40px;
-  }
-  
-  .link:hover {
-    color: rgba(111, 34, 50, 1);
-  }
-  
-  p {
-    font-size: 30px !important;
-  }
-  
-  .display-1 {
-    font-family: "Bangers";
-    font-size: 100px !important;
-  }
-  
-  /*********** Navbar Styles ***********/
-  .navbar-brand {
-    font-family: "system-ui";
-    font-size: 50px;
-    padding: 20px;
-  }
-  
-  .nav {
-    font-size: 35px;
-  }
-  
-  .nav-item {
-    padding: 30px;
-    color: white;
-  }
-  
-  .nav-item:hover,
-  .navbar-brand:hover {
-    color: rgba(195, 7, 63, 1) !important;
-  }
+body {
+  background-image: url("../images/s-mart.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: "system-ui";
+}
+
+.header-row {
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.r1 {
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.link-row {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.link {
+  color: rgba(195, 7, 63, 1);
+  text-decoration: none;
+}
+
+.link h3 {
+  font-size: 40px;
+}
+
+.link:hover {
+  color: rgba(111, 34, 50, 1);
+}
+
+p {
+  font-size: 30px !important;
+}
+
+.display-1 {
+  font-family: "Bangers";
+  font-size: 80px !important;
+}
+
+/*********** Navbar Styles ***********/
+.navbar-brand {
+  font-family: "system-ui";
+  font-size: 50px;
+  padding: 20px;
+}
+
+.nav {
+  font-size: 35px;
+}
+
+.nav-item {
+  padding: 30px;
+  color: white;
+}
+
+.nav-item:hover,
+.navbar-brand:hover {
+  color: rgba(195, 7, 63, 1) !important;
+}

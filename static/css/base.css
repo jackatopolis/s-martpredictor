@@ -1,5 +1,5 @@
 body {
-  color: rgba(195, 7, 63, 1);
+  color: whitesmoke;
 }
 
 body {
@@ -43,7 +43,7 @@ p {
 
 .display-1 {
   font-family: "Bangers";
-  font-size: 100px !important;
+  font-size: 80px !important;
 }
 
 /*********** Navbar Styles ***********/
