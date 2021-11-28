@@ -37,6 +37,7 @@ for (var element = 1; element<4; element++) {
     dropdown.add(opt);
 }
 
+
 // Week of the Year
 var dropdown = document.getElementById("selWeek1");
 var opt = document.createElement("option"); 
