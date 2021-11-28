@@ -7,13 +7,22 @@
     <h2>Choose Your Scenario</h2>
     <div class="row">
         <div id="container dropdownStyle">
-            <select id="selStore"></select>
-            <select id="selProduct"></select>
-            <select id="selWeek"></select>
-            <select id="selHoliday"></select>
-            <input type="number" id="basePrice" name="Base Price" required step="0.01" min="1" max="50">
-            <input type="number" id="price" name="Promotional Price" required step="0.01" min="1" max="50">
-            <input type="number" id="cost" name="Cost" required step="0.01" min="1" max="50">
+            <h4>Store</h4>
+            <select id="selStore1"></select>
+            <h4>Product</h4>
+            <select id="selProduct1"></select>
+            <h4>Week of Year</h4>
+            <select id="selWeek1"></select>
+            <h4>Holiday</h4>
+            <select id="selHoliday1"></select>
+                <option value=1>Yes</option>
+                <option value=0>No</option>
+            <h4>Base Price</h4>
+            <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
+            <h4>Price</h4>
+            <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
+            <h4>Cost</h4>
+            <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
             <button type="button">Predict</button>
         </div>
 

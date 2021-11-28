@@ -1,27 +1,17 @@
 console.log('predictor page')
 
-var dataset = {
-    "raw": {"store": [1,1,1,1,1,2,2,2,2,2,3,3,3,3,3],
-            "product": [1,2,3,4,5,1,2,3,4,5,1,2,3,4,5] 
-        },
-    "clean": 0
-};
-
-
 
 // CREATE DROPDOWN MENUS
 
 // Store
-var dropdown = document.getElementById("selStore");
+var dropdown = document.getElementById("selStore1");
 var opt = document.createElement("option"); 
 opt.text = 'Select Store';
 opt.value = '';
 dropdown.add(opt);
 
-var unique = dataset["raw"]["store"].filter((v, i, a) => a.indexOf(v) === i)
-console.log(unique)
-unique.forEach( (element) => {
-    var dropdown = document.getElementById("selStore");
+for (var element = 1; element<11; element++) {
+    var dropdown = document.getElementById("selStore1");
     var opt = document.createElement("option"); 
     let str = "Store ";
     str += element;
@@ -29,19 +19,16 @@ unique.forEach( (element) => {
     opt.value = element;
     dropdown.add(opt);
 }
-);
 
 // Product
-var dropdown = document.getElementById("selProduct");
+var dropdown = document.getElementById("selProduct1");
 var opt = document.createElement("option"); 
 opt.text = 'Select Product';
 opt.value = '';
 dropdown.add(opt);
 
-var unique = dataset["raw"]["product"].filter((v, i, a) => a.indexOf(v) === i)
-console.log(unique)
-unique.forEach( (element) => {
-    var dropdown = document.getElementById("selProduct");
+for (var element = 1; element<4; element++) {
+    var dropdown = document.getElementById("selProduct1");
     var opt = document.createElement("option"); 
     let str = "Product ";
     str += element;
@@ -49,19 +36,17 @@ unique.forEach( (element) => {
     opt.value = element;
     dropdown.add(opt);
 }
-);
 
 // Week of the Year
-var dropdown = document.getElementById("selWeek");
+var dropdown = document.getElementById("selWeek1");
 var opt = document.createElement("option"); 
 opt.text = 'Select Week';
 opt.value = '';
 dropdown.add(opt);
 
 var unique = [...Array(52).keys()];
-console.log(unique)
 unique.forEach( (element) => {
-    var dropdown = document.getElementById("selWeek");
+    var dropdown = document.getElementById("selWeek1");
     var opt = document.createElement("option"); 
     let str = "Week ";
     str += element+1;
@@ -71,38 +56,18 @@ unique.forEach( (element) => {
 }
 );
 
-// Holiday
-var dropdown = document.getElementById("selHoliday");
-var opt = document.createElement("option"); 
-opt.text = 'Holiday';
-opt.value = '';
-dropdown.add(opt);
-
-var unique = ["Yes","No"];
-console.log(unique)
-unique.forEach( (element) => {
-    var dropdown = document.getElementById("selHoliday");
-    var opt = document.createElement("option"); 
-    opt.text = element.toString();
-    if (element == 'Yes') {
-        opt.value = 1
-    }
-    else {opt.value = 0}
-    dropdown.add(opt);
-}
-);
 
 
 
 d3.selectAll("button").on("click", function () {
     
-    var store = d3.select("#selStore").property("value");
-    var product = d3.select("#selProduct").property("value");
-    var week = d3.select("#selWeek").property("value");
-    var holiday = d3.select("#selHoliday").property("value");
-    var basePrice = d3.select("#basePrice").property("value");
-    var price = d3.select("#price").property("value");
-    var cost = d3.select("#cost").property("value");
+    var store = d3.select("#selStore1").property("value");
+    var product = d3.select("#selProduct1").property("value");
+    var week = d3.select("#selWeek1").property("value");
+    var holiday = d3.select("#selHoliday1").property("value");
+    var basePrice = d3.select("#basePrice1").property("value");
+    var price = d3.select("#price1").property("value");
+    var cost = d3.select("#cost1").property("value");
 
 
     data = {"store":store,
