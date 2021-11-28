@@ -14,7 +14,7 @@ for (var element = 1; element<11; element++) {
     var dropdown = document.getElementById("selStore1");
     var opt = document.createElement("option"); 
     let str = "Store ";
-    str += element;
+    str += element.toString();
     opt.text = str.toString();
     opt.value = element;
     dropdown.add(opt);
