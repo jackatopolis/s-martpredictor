@@ -1,0 +1,7 @@
+body {
+    background-image: url("images/s-mart.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    font-family: "Patrick Hand";
+  }
