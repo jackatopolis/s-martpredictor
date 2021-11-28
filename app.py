@@ -21,62 +21,63 @@ def predictor():
 
 
 # prediction function
-def ValuePredictor(to_predict_list):
-    to_predict = np.array(to_predict_list).reshape(1, 7)
-    loaded_model = pickle.load(open("static/data/Resources/model.pkl", "rb"))
-    result = loaded_model.predict(to_predict)
-    return result[0]
+# def ValuePredictor(to_predict_list):
+#     to_predict = np.array(to_predict_list).reshape(1, 7)
+#     loaded_model = pickle.load(open("static/data/Resources/model.pkl", "rb"))
+#     result = loaded_model.predict(to_predict)
+#     return result[0]
 
 # Predict
 
 
 @app.route('/predict', methods=['POST'])
-def result():
-    if request.method == 'POST':
-        to_predict_list = request.form.to_dict()
-        to_predict_list = list(to_predict_list.values())
-        to_predict_list = list(map(int, to_predict_list))
-        result = ValuePredictor(to_predict_list)
-        console.log(result)
-        if int(result):
-            prediction = result
-        else:
-            prediction = 'Data Incomplete'
-        return render_template("predictor.html", prediction=prediction)
+# def result():
+#     if request.method == 'POST':
+#         to_predict_list = request.form.to_dict()
+#         to_predict_list = list(to_predict_list.values())
+#         to_predict_list = list(map(int, to_predict_list))
+#         result = ValuePredictor(to_predict_list)
+#         console.log(result)
+#         if int(result):
+#             prediction = result
+#         else:
+#             prediction = 'Data Incomplete'
+#         return render_template("predictor.html", prediction=prediction)
+def predict():
 
-# def predict():
-# dataInput = request.json
-# data = {}
-# try:
-#     for x in range(52):
-#         if int(dataInput['week']) == x+1:
-#             data[globals()[f"week_of_year_{x+1}"]] = [1]
-#         else:
-#             data[globals()[f"week_of_year_{x+1}"]] = [0]
-#     for x in range(10):
-#         if int(dataInput['store']) == x and x+1 != 9:
-#             data[globals()[f"Store_{x+1}"]] = [1]
-#         elif x+1 != 9:
-#             data[globals()[f"Store_{x+1}"]] = [0]
-#         else:
-#             continue
-#     for x in range(3):
-#         if int(dataInput['product']) == x+1:
-#             data[globals()[f"Product_{x+1}"]] = [1]
-#         else:
-#             data[globals()[f"Product_{x+1}"]] = [0]
-#     if int(dataInput["price"]) < int(dataInput["basePrice"]):
-#         data['promotion'] = [1]
-#     else:
-#         data['promotion'] = [0]
-#     data["Base Price"] = [int(dataInput["basePrice"])]
-#     data["Price"] = [int(dataInput["price"])]
-#     data["Is_Holiday"] = [int(dataInput["holiday"])]
-#     input = DataFrame(data)
-# except:
-#     return jsonify({'quantity': 0})
-# output = model.predict(input)
-# return jsonify({"quantity": output[0]})
+
+dataInput = request.json
+data = {}
+try:
+    for x in range(52):
+        if int(dataInput['week']) == x+1:
+            data[globals()[f"week_of_year_{x+1}"]] = [1]
+        else:
+            data[globals()[f"week_of_year_{x+1}"]] = [0]
+    for x in range(10):
+        if int(dataInput['store']) == x and x+1 != 9:
+            data[globals()[f"Store_{x+1}"]] = [1]
+        elif x+1 != 9:
+            data[globals()[f"Store_{x+1}"]] = [0]
+        else:
+            continue
+    for x in range(3):
+        if int(dataInput['product']) == x+1:
+            data[globals()[f"Product_{x+1}"]] = [1]
+        else:
+            data[globals()[f"Product_{x+1}"]] = [0]
+    if int(dataInput["price"]) < int(dataInput["basePrice"]):
+        data['promotion'] = [1]
+    else:
+        data['promotion'] = [0]
+    data["Base Price"] = [int(dataInput["basePrice"])]
+    data["Price"] = [int(dataInput["price"])]
+    data["Is_Holiday"] = [int(dataInput["holiday"])]
+    input = DataFrame(data)
+except:
+    return jsonify({'quantity': 0})
+output = model.predict(input)
+return jsonify({"quantity": output[0]})
 
 
 # Data Page
