@@ -42,13 +42,13 @@ body {
   }
   
   .display-1 {
-    font-family: "Bangers";
+    font-family: "system-ui";
     font-size: 100px !important;
   }
   
   /*********** Navbar Styles ***********/
   .navbar-brand {
-    font-family: "Bangers";
+    font-family: "system-ui";
     font-size: 50px;
     padding: 20px;
   }

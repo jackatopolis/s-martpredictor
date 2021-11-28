@@ -3,32 +3,35 @@
 {% block content %}
 <link rel="stylesheet" href="{{url_for('static', filename='css/base.css')}}" />
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
 <div class="container">
-    <h2>Choose Your Scenario</h2>
-    <div class="row">
-        <div id="container dropdownStyle">
-            <h4>Store</h4>
-            <select id="selStore1"></select>
-            <h4>Product</h4>
-            <select id="selProduct1"></select>
-            <h4>Week of Year</h4>
-            <select id="selWeek1"></select>
-            <h4>Holiday</h4>
-            <select id="selHoliday1">
-                <option value=1>Yes</option>
-                <option value=0>No</option>
-            </select>
-                
-            <h4>Base Price</h4>
-            <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
-            <h4>Price</h4>
-            <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
-            <h4>Cost</h4>
-            <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
-            <button type="button">Predict</button>
+    <div class="container">
+        <h2>Choose Your Scenario</h2>
+        <div class="row">
+            <div id="container dropdownStyle">
+                <h4>Store</h4>
+                <select id="selStore1"></select>
+                <h4>Product</h4>
+                <select id="selProduct1"></select>
+                <h4>Week of Year</h4>
+                <select id="selWeek1"></select>
+                <h4>Holiday</h4>
+                <select id="selHoliday1">
+                    <option value=1>Yes</option>
+                    <option value=0>No</option>
+                </select>
+
+                <h4>Base Price</h4>
+                <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
+                <h4>Price</h4>
+                <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
+                <h4>Cost</h4>
+                <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
+                <button type="button">Predict</button>
+            </div>
+
+
         </div>
-
-
     </div>
 </div>
 
