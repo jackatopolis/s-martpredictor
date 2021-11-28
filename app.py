@@ -44,7 +44,7 @@ def predictor():
 #             prediction = 'Data Incomplete'
 #         return render_template("predictor.html", prediction=prediction)
 def predict():
-    
+
     dataInput = request.json
     data = {}
     try:
@@ -72,7 +72,8 @@ def predict():
         data["Base Price"] = [int(dataInput["basePrice"])]
         data["Price"] = [int(dataInput["price"])]
         data["Is_Holiday"] = [int(dataInput["holiday"])]
-        input = DataFrame(data)
+        input = data
+        #input = DataFrame(data)
     except:
         return jsonify({'quantity': 0})
     output = model.predict(input)
