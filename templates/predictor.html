@@ -8,37 +8,93 @@
     <div class="container">
         <h2>Choose Your Scenario</h2>
         <div class="row">
-            <div id="container dropdownStyle">
-                <h4>Store</h4>
-                <select id="selStore1"></select>
-                <h4>Product</h4>
-                <select id="selProduct1"></select>
-                <h4>Week of Year</h4>
-                <select id="selWeek1"></select>
-                <h4>Holiday</h4>
-                <select id="selHoliday1">
-                    <option value=1>Yes</option>
-                    <option value=0>No</option>
-                </select>
 
-                <h4>Base Price</h4>
-                <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
-                <h4>Price</h4>
-                <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
-                <h4>Cost</h4>
-                <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
-                <button type="button" class="p1">Predict</button>
+            <!-- Product 1 -->
+            <div class="col-md-2 col-xs-12">
+                <div id="container dropdownStyle">
+                    <h4>Store</h4>
+                    <select id="selStore1"></select>
+                    <h4>Week of Year</h4>
+                    <select id="selWeek1"></select>
+                    <h4>Holiday</h4>
+                    <select id="selHoliday1">
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+
+                    <h4>Base Price</h4>
+                    <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
+                    <h4>Price</h4>
+                    <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
+                    <h4>Cost</h4>
+                    <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
+                    <button type="button" class="p1">Predict</button>
+                </div>
+                <div class="container">
+                    <h2>Predicted Results:</h2>
+                    <div id="modelResults1"></div>
+                </div>
             </div>
 
+            <!-- Product 2 -->
+            <div class="col-md-2 col-xs-12">
+                <div id="container dropdownStyle">
+                    <h4>Store</h4>
+                    <select id="selStore2"></select>
+                    <h4>Week of Year</h4>
+                    <select id="selWeek2"></select>
+                    <h4>Holiday</h4>
+                    <select id="selHoliday2">
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+
+                    <h4>Base Price</h4>
+                    <input type="number" id="basePrice2" name="Base Price" required step="0.01" min="1" max="50">
+                    <h4>Price</h4>
+                    <input type="number" id="price2" name="Promotional Price" required step="0.01" min="1" max="50">
+                    <h4>Cost</h4>
+                    <input type="number" id="cost2" name="Cost" required step="0.01" min="1" max="50">
+                    <button type="button" class="p2">Predict</button>
+                </div>
+                <div class="container">
+                    <h2>Predicted Results:</h2>
+                    <div id="modelResults2"></div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col-md-2 col-xs-12">
+                <div id="container dropdownStyle">
+                    <h4>Store</h4>
+                    <select id="selStore3"></select>
+                    <h4>Week of Year</h4>
+                    <select id="selWeek3"></select>
+                    <h4>Holiday</h4>
+                    <select id="selHoliday3">
+                        <option value=1>Yes</option>
+                        <option value=0>No</option>
+                    </select>
+
+                    <h4>Base Price</h4>
+                    <input type="number" id="basePrice3" name="Base Price" required step="0.01" min="1" max="50">
+                    <h4>Price</h4>
+                    <input type="number" id="price3" name="Promotional Price" required step="0.01" min="1" max="50">
+                    <h4>Cost</h4>
+                    <input type="number" id="cost3" name="Cost" required step="0.01" min="1" max="50">
+                    <button type="button" class="p3">Predict</button>
+                </div>
+                <div class="container">
+                    <h2>Predicted Results:</h2>
+                    <div id="modelResults3"></div>
+                </div>
+            </div>
 
         </div>
     </div>
 </div>
 
-<div class="container">
-    <h2>Predicted Results:</h2>
-    <div id="modelResults"></div>
-</div>
+
 
 
 </body>
