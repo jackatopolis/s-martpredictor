@@ -7,10 +7,10 @@ color: #fff;
 }
 
 h2 {
-color: #eee;
-text-align: center;
-font-size: 22px;
-margin-top: 15px;
+    color: #eee;
+    text-align: center;
+    font-size: 22px;
+    margin-top: 15px;
 }
 
 h3 {
@@ -18,8 +18,9 @@ color: #ddd;
 }
 
 h4 {
-color: #fff;
-font-size: 19px;
+    color: #fff;
+    font-size: 19px;
+    margin-top: 15px;
 }
 
 h5 {
@@ -51,4 +52,9 @@ border-color: lawngreen;
 
 input {
     margin-bottom: 5px;
+}
+
+button {
+    margin:auto;
+    width:20px;
 }
