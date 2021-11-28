@@ -39,3 +39,11 @@ display:block;
 border-width: 3px;
 border-color: lawngreen;
 }
+
+#inputMenu {
+    margin-top: 10px;
+}
+
+#inputContainer {
+    margin-top: 10px;
+}
