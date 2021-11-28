@@ -80,6 +80,7 @@ d3.selectAll("button").on("click", function () {
             "cost":cost,
             };
 
+    console.log(data);
 
     fetch('/predict', {
         method: 'POST',
