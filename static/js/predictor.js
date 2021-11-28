@@ -81,7 +81,7 @@ d3.selectAll("button").on("click", function () {
             };
 
 
-    fetch('/predictor', {
+    fetch('/predict', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
