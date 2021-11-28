@@ -14,9 +14,11 @@
             <h4>Week of Year</h4>
             <select id="selWeek1"></select>
             <h4>Holiday</h4>
-            <select id="selHoliday1"></select>
+            <select id="selHoliday1">
                 <option value=1>Yes</option>
                 <option value=0>No</option>
+            </select>
+                
             <h4>Base Price</h4>
             <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
             <h4>Price</h4>
@@ -47,5 +49,5 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
     integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
     crossorigin="anonymous"></script>
-<script src="{{url_for('static', filename='js/predictor.js')}}"></script>
+<script src="../static/js/predictor.js"></script>
 {% endblock %}
