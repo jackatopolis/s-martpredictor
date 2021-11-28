@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 #from joblib import load
-#from pandas import DataFrame
+import pandas as pd
+from pickle import load
 
 app = Flask(__name__)
 
@@ -75,7 +76,7 @@ def predict():
         data["Is_Holiday"] = [int(dataInput["holiday"])]
         
         input = data
-        #input = DataFrame(data)
+        #input = pd.DataFrame(data)
 
     except:
         return jsonify({'quantity': 0})
