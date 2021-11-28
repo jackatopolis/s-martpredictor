@@ -1,0 +1,38 @@
+body {
+    padding-top: 5rem;
+}
+  
+h1 {
+color: #fff;
+}
+
+h2 {
+color: #eee;
+text-align: center;
+}
+
+h3 {
+color: #ddd;
+}
+
+h4 {
+color: #ccc;
+}
+
+h5 {
+color: #bbb;
+}
+
+h6 {
+color: #aaa;
+}
+
+p {
+color: #fff;
+font-size: 20px;
+}
+
+#dropdownStyle {
+display:block;
+border-color: lawngreen;
+}
