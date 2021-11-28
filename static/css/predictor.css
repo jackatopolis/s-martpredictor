@@ -56,5 +56,6 @@ input {
 
 button {
     margin:auto;
-    width:20px;
+    display:block;
+    width:120px;
 }
