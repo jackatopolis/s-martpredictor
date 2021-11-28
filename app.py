@@ -5,7 +5,7 @@ import pickle as pkl
 
 app = Flask(__name__)
 
-#model = pkl.load(open('static/data/Resources/model.pkl', 'rb'))
+model = pkl.load(open('./static/data/Resources/model.pkl', 'rb'))
 #scaler = pkl.load(open('static/data/Resources/scaler.pkl', 'rb'))  # loads scaler in, check filename
 
 # Home Page
