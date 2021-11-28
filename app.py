@@ -1,12 +1,12 @@
 from flask import Flask, render_template, request, jsonify
 #from joblib import load
 #import pandas as pd
-from pickle import load
+import pickle as pkl
 
 app = Flask(__name__)
 
-#model = load('static/data/Resources/model.pkl')
-#scaler = load('static/data/Resources/scaler.pkl')  # loads scaler in, check filename
+model = pkl.load(open('static/data/Resources/model.pkl', 'rb'))
+scaler = pkl.load(open('static/data/Resources/scaler.pkl', 'rb'))  # loads scaler in, check filename
 
 # Home Page
 
