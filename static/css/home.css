@@ -7,7 +7,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
-    font-family: "Patrick Hand";
+    font-family: "system-ui";
   }
   
   .header-row {
@@ -42,7 +42,7 @@ body {
   }
   
   .display-1 {
-    font-family: "system-ui";
+    font-family: "Bangers";
     font-size: 100px !important;
   }
   
