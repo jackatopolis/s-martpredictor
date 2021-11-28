@@ -9,6 +9,7 @@ color: #fff;
 h2 {
 color: #eee;
 text-align: center;
+font-size: 18px;
 }
 
 h3 {
@@ -16,7 +17,7 @@ color: #ddd;
 }
 
 h4 {
-color: #ccc;
+color: #fff;
 }
 
 h5 {
@@ -34,5 +35,6 @@ font-size: 20px;
 
 #dropdownStyle {
 display:block;
+border-width: 3px;
 border-color: lawngreen;
 }
