@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request, jsonify
 #from joblib import load
 #import pandas as pd
-#import pickle as pkl
+import pickle as pkl
 
 app = Flask(__name__)
 
