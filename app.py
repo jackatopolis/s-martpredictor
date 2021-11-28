@@ -74,7 +74,7 @@ def predict():
         data["Price"] = [int(dataInput["price"])]
         data["Is_Holiday"] = [int(dataInput["holiday"])]
         input = DataFrame(data)
-        return input
+
     except:
         return jsonify({'quantity': 0})
     input = scaler.transform(input)
