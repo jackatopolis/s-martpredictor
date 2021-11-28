@@ -14,12 +14,6 @@ def home():
     return render_template('home.html')
 
 
-# About Page
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
-
 # Predictor
 @app.route('/predictor')
 def predictor():
@@ -92,10 +86,14 @@ def data():
 
 
 # Model Page
-@app.route('/model')
+@app.route('/eda')
 def model():
-    return render_template('model.html')
+    return render_template('eda.html')
 
+# About Page
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
 # Error Handler Page
 @app.errorhandler(404)
