@@ -1,72 +1,99 @@
 from flask import Flask, render_template, request, jsonify
-#from joblib import load
-#import pandas as pd
+import joblib
+import pandas as pd
 import pickle as pkl
 
 app = Flask(__name__)
 
-#model = pkl.load(open('./static/data/Resources/model.pkl', 'rb'))
-#scaler = pkl.load(open('static/data/Resources/scaler.pkl', 'rb'))  # loads scaler in, check filename
+model = joblib.load('static/data/Resources/model.joblib')
+# loads scaler in, check filename
+scaler = joblib.load('static/data/Resources/scaler.joblib')
 
 # Home Page
 
 
-@app.route('/')
+@ app.route('/')
 def home():
     return render_template('home.html')
 
 
 # Predictor
-@app.route('/predictor')
+@ app.route('/predictor')
 def predictor():
     return render_template('predictor.html')
 
 
-# prediction function
-# def ValuePredictor(to_predict_list):
-#     to_predict = np.array(to_predict_list).reshape(1, 7)
-#     loaded_model = pickle.load(open("static/data/Resources/model.pkl", "rb"))
-#     result = loaded_model.predict(to_predict)
-#     return result[0]
-
-# Predict
-
-
-@app.route('/predict', methods=['POST'])
-# def result():
-#     if request.method == 'POST':
-#         to_predict_list = request.form.to_dict()
-#         to_predict_list = list(to_predict_list.values())
-#         to_predict_list = list(map(int, to_predict_list))
-#         result = ValuePredictor(to_predict_list)
-#         console.log(result)
-#         if int(result):
-#             prediction = result
-#         else:
-#             prediction = 'Data Incomplete'
-#         return render_template("predictor.html", prediction=prediction)
+@ app.route('/predict', methods=['POST'])
 def predict():
 
-    dataInput = request.json
+    dataInput = (request.json)
     data = {}
     try:
+
         for x in range(52):
             if int(dataInput['week']) == x+1:
-                data[globals()[f"week_of_year_{x+1}"]] = [1]
+                data[f"week_of_year_{x+1}"] = [1]
             else:
-                data[globals()[f"week_of_year_{x+1}"]] = [0]
+                data[f"week_of_year_{x+1}"] = [0]
         for x in range(10):
             if int(dataInput['store']) == x and x+1 != 9:
-                data[globals()[f"Store_{x+1}"]] = [1]
+                data[f"Store_{x+1}"] = [1]
             elif x+1 != 9:
-                data[globals()[f"Store_{x+1}"]] = [0]
+                data[f"Store_{x+1}"] = [0]
             else:
                 continue
         for x in range(3):
             if int(dataInput['product']) == x+1:
-                data[globals()[f"Product_{x+1}"]] = [1]
+                data[f"Product_{x+1}"] = [1]
             else:
-                data[globals()[f"Product_{x+1}"]] = [0]
+                data[f"Product_{x+1}"] = [0]
+        if float(dataInput["price"]) < float(dataInput["basePrice"]):
+            data['promotion'] = [1]
+        else:
+            data['promotion'] = [0]
+        data["Base Price"] = [float(dataInput["basePrice"])]
+        data["Price"] = [float(dataInput["price"])]
+        data["Is_Holiday"] = [float(dataInput["holiday"])]
+
+
+    except:
+        return jsonify({'quantity': -1})
+
+    input_df = pd.DataFrame(data)
+    output = model.predict(input_df)
+
+    return jsonify({"quantity": output[0]})
+
+
+@ app.route('/projections')
+def projections():
+    return render_template('projections.html')
+
+
+@ app.route('/predict_projections', methods=['POST'])
+def predict_projections():
+
+    dataInput = (request.json)
+    data = {}
+    try:
+
+        for x in range(52):
+            if int(dataInput['week']) == x+1:
+                data[f"week_of_year_{x+1}"] = [1]
+            else:
+                data[f"week_of_year_{x+1}"] = [0]
+        for x in range(10):
+            if int(dataInput['store']) == x and x+1 != 9:
+                data[f"Store_{x+1}"] = [1]
+            elif x+1 != 9:
+                data[f"Store_{x+1}"] = [0]
+            else:
+                continue
+        for x in range(3):
+            if int(dataInput['product']) == x+1:
+                data[f"Product_{x+1}"] = [1]
+            else:
+                data[f"Product_{x+1}"] = [0]
         if int(dataInput["price"]) < int(dataInput["basePrice"]):
             data['promotion'] = [1]
         else:
@@ -74,16 +101,13 @@ def predict():
         data["Base Price"] = [int(dataInput["basePrice"])]
         data["Price"] = [int(dataInput["price"])]
         data["Is_Holiday"] = [int(dataInput["holiday"])]
-        
-        input = data
-        #input = pd.DataFrame(data)
+
 
     except:
-        return jsonify({'quantity': 0})
-    
-    #input = scaler.transform(input)
-    output = model.predict(input)
+        return jsonify({'quantity': -1})
 
+    input_df = pd.DataFrame(data)
+    output = model.predict(input_df)
 
     return jsonify({"quantity": output[0]})
 
@@ -96,15 +120,24 @@ def data():
 
 # Model Page
 @app.route('/eda')
-def model():
+def eda():
     return render_template('eda.html')
 
+# Model Page
+@app.route('/model')
+def hypertuning():
+    return render_template('model.html')
+
 # About Page
+
+
 @app.route('/about')
 def about():
     return render_template('about.html')
 
 # Error Handler Page
+
+
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
