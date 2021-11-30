@@ -24,7 +24,8 @@
   <!-- ('/projections',  'Projections'),  -->
   <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
   {% set navigation_bar = [ ('/', 'Home'), ('/predictor', 'Predictor'),
-  ('/data', 'Data'), ('/about', 'About') ] -%}
+  ('/data', 'Data'), ('/about', 'About'), ('https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/sc_eda.ipynb','EDA'), 
+  ('https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/hypertuning.ipynb','Model')]-%}
 
   <body style="background-color: #1c1c1c">
     <nav
@@ -58,24 +59,6 @@
               <a class="nav-link" href="{{ href|e }}">{{ title|e }}</a>
             </li>
             {% endif %} {% endfor %}
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href='https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/sc_eda.ipynb'
-                target='_blank'
-                style="color: #fff"
-                >EDA<span class="sr-only"></span
-              ></a>
-            </li>
-            <li class="nav-item">
-              <a
-                class="nav-link"
-                href='https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/hypertuning.ipynb'
-                target='_blank'
-                style="color: #fff"
-                >Model<span class="sr-only"></span
-              ></a>
-            </li>
           </ul>
         </div>
       </div>
