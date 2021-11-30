@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% set active_page = "Model" %}
+{% block content %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/about.css')}}" />
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+
+
+<!-- Model Explanation -->
+<div class="container">
+   <h2>About the Model</h2>
+   <hr>
+   <p>Here's a paragraph about the model.</p>
+</div>
+<script src="{{url_for('static', filename='js/model.js')}}"></script>
+{% endblock %}

@@ -21,10 +21,10 @@
       href="{{url_for('static', filename='css/base.css')}}"
     />
   </head>
-
+  <!-- ('/projections',  'Projections'),  -->
   <!-- Jinja2 stuff related to generating nav and setting active state. Add more pages here! -->
-  {% set navigation_bar = [ ('/', 'Home'), ('/predictor',
-  'Predictor'), ('https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/sc_eda.ipynb', 'EDA'), ('/data', 'Data'), ('/about', 'About') ] -%}
+  {% set navigation_bar = [ ('/', 'Home'), ('/predictor', 'Predictor'),
+  ('/data', 'Data'), ('/about', 'About') ] -%}
 
   <body style="background-color: #1c1c1c">
     <nav
@@ -58,11 +58,27 @@
               <a class="nav-link" href="{{ href|e }}">{{ title|e }}</a>
             </li>
             {% endif %} {% endfor %}
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                onclick="window.open('https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/sc_eda.ipynb','_blank')"
+                style="color: #fff"
+                >EDA<span class="sr-only"></span
+              ></a>
+            </li>
+            <li class="nav-item">
+              <a
+                class="nav-link"
+                onclick="window.open('https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/hypertuning.ipynb','_blank')"
+                style="color: #fff"
+                >Model<span class="sr-only"></span
+              ></a>
+            </li>
           </ul>
         </div>
       </div>
     </nav>
-    <div role="main" class="container">
+    <div style="margin-top: 100px" role="main" class="container">
       <!-- Unique Content -->
       {% block content %} {% endblock %}
       <!-- End Unique Content -->
