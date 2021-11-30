@@ -3,7 +3,7 @@ body {
 }
   
 h1 {
-color: #fff;
+color: rgba(195, 7, 63, 1);
 }
 
 h2 {
@@ -18,7 +18,7 @@ color: #ddd;
 }
 
 h4 {
-    color: #fff;
+    color: rgba(195, 7, 63, 1);
     font-size: 19px;
     margin-top: 15px;
 }
@@ -32,7 +32,7 @@ color: #aaa;
 }
 
 p {
-color: #fff;
+color: rgba(195, 7, 63, 1);
 font-size: 20px;
 }
 
