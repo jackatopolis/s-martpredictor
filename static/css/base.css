@@ -44,6 +44,7 @@ p {
 .display-1 {
   font-family: "Bangers";
   font-size: 80px !important;
+  margin-bottom:30px;
 }
 
 /*********** Navbar Styles ***********/
