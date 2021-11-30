@@ -76,41 +76,62 @@
 # Define a function to take into consideration whether or not school holiday season applies and plot the data.
 # Root Mean Square Error and plot
 
-# Data Model Implementation: 				
-Python Pandas (for preprocessing)
-Scikit learn for ML
-Student produces an analytical model in Python that fulfills all the following specifications:
-Script initializes, trains, and evaluates a model, or loads a pretrained model from hyperparameter tuning
-Script cleans, normalizes, and standardizes input data prior to modeling
-Model utilizes data retrieved from a relational database or big data source (SQL or Spark)
-Model demonstrates meaningful predictive power (>75% classification accuracy, >80 R-squared) 
-
-# Data Model Optimization (hypertuning.ipynb):
-# Call in the data (preprocessed.csv)
-# Migrating Data From Python to SQL
-    # Set up connection (db.sqlite)
-    #  Confirm data is in SQL database
+# Data Model Implementation (hypertuning.ipynb): 				
+# Call in the data (preprocessed.csv) using pandas
+# Migrating Data From Pythonto SQL
+    # Set up connection
+    # Confirm data is in SQL database
     # Assign product variables
     # Create features
     # Create target
-
-
-Clear, well-documented evidence of model optimization and performance evaluation in the form of one of the following:
-A CSV/Excel table showing model designs, testing parameters, and model performance
-A Python script that utilizes hyperparameter tuning logic
--AND-
-Overall model performance is printed or displayed at the end of the script 
+# Gradient Boosting Regression
+    # Split data
+    # Scale the data
+    # Calculating Cross Validation Score across multiple testing sets
+        # for classification we use accuracy and F1 score
+    # create a model using Gradient Boosting Regression
+    # for regression we use R2 score and MAE(mean absolute error)
+    # all other steps will be same as classification as shown above
+# Feature Importance on the Model
+    # create a plot of the features
+    # generate a cross validation score
+# Hypertuning the Model
+    # set the parameters
+    # tune the model using GridSearchCV
+    # Generate predictions
+    # Generate r-squared
+# Final Hypertuned Model
+    # create a model using the optimized values
+    # Split data
+    # Scale the data
+    # Calculating Cross Validation Score across multiple testing sets
+    # for classification we use accuracy and F1 score
+    # for regression we use R2 score and MAE(mean absolute error)
+    # all other steps will be same as classification as shown above
+    # X_test_scaled['Weekly_Units_Sold']= pred
+# Feature Importance on the Hypertuned Model
+    # plot the features for the optimized model
+# Export Model
+    # save the model
+    # save the scaler
+    # Load the model 
 
 # Deployment:
-JavaScript D3.js (for dropdown event handling)
-HTML/CSS/Bootstrap (for website)
-Python Flask App (creating routes for deployment)
-SQLite file (for database)
-Heroku
-Flask App
+# using flask, joblib, pandas and pickle
+# create the model
+# loads scaler in, check filename
+# create the web pages
+    # Home Page
+    # Predictor
+    # Data Page
+    # EDA Page
+    # Model Page
+    # About Page
+    # Error Handler Page
 
 # Project and Documentation Uploaded to GitHub:
-Successfully uploaded to GitHub; demonstrating professional quality of presentation
+Successfully uploaded to GitHub;
+demonstrating professional quality of presentation
 GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use	
 The README is customized to a professional level 
 Group Presentation 
