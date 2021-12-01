@@ -96,10 +96,10 @@ d3.selectAll("button.p1").on("click", function () {
             var costT = quantity * cost;
             var profit = revenue - costT;
 
-            document.getElementById("modelResults1").innerHTML = "Quantity Sold: " + quantity.toFixed(0) +
-                "<br>Total Revenue: $" + revenue.toFixed(2) +
-                "<br>Total Cost: $" + costT.toFixed(2) +
-                "<br>Total Profit: $" + profit.toFixed(2);
+            document.getElementById("modelResults1").innerHTML = "<br><br><br>Quantity Sold:  " + quantity.toFixed(0) +
+                "<br><br>Total Revenue:  $" + revenue.toFixed(2) +
+                "<br><br>Total Cost:  $" + costT.toFixed(2) +
+                "<br><br>Total Profit:  $" + profit.toFixed(2);
         }
         )
 }
