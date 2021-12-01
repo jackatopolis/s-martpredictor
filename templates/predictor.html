@@ -11,7 +11,8 @@
             <!-- User Inputs -->
             <div class="col-sm scenario">
                 <h2>Choose Your Scenario</h2>
-                <div id="container dropdownStyle">
+<div class="row">
+                <div id="container dropdownStyle col-sm">
                     <h4>Store</h4>
                     <select id="selStore1"></select>
                     <h4>Product</h4>
@@ -23,6 +24,8 @@
                         <option value=1>Yes</option>
                         <option value=0>No</option>
                     </select>
+                </div>
+                <div id="container dropdownStyle col-sm">
                     <h4>Base Price</h4>
                     <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
                     <h4>Price</h4>
@@ -32,6 +35,7 @@
                     <br><br>
                     <button type="button" class="p1" style="margin: auto;">Predict!</button>
                 </div>
+            </div>
             </div>
             <div class="col-sm results">
                 <div class="container">
