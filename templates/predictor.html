@@ -5,46 +5,49 @@
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 
 
-    <div style="margin-top: -40px;" class="container" id="inputContainer">
-        <div class="row" id="inputMenu">
+<div style="margin-top: -40px;" class="container" id="inputContainer">
+    <div class="row" id="inputMenu">
 
-            <!-- User Inputs -->
-            <div class="col-sm scenario">
-                <h2>Choose Your Scenario</h2>
-<div class="row">
-                <div id="container dropdownStyle col-sm">
-                    <h4>Store</h4>
-                    <select id="selStore1"></select>
-                    <h4>Product</h4>
-                    <select id="selProduct1"></select>
-                    <h4>Week of Year</h4>
-                    <select id="selWeek1"></select>
-                    <h4>Holiday</h4>
-                    <select id="selHoliday1">
-                        <option value=1>Yes</option>
-                        <option value=0>No</option>
-                    </select>
+        <!-- User Inputs -->
+        <div class="col-sm scenario">
+            <h2>Choose Your Scenario</h2>
+            <div class="row">
+                <div class="col-sm">
+                    <div id="container dropdownStyle">
+                        <h4>Store</h4>
+                        <select id="selStore1"></select>
+                        <h4>Product</h4>
+                        <select id="selProduct1"></select>
+                        <h4>Week of Year</h4>
+                        <select id="selWeek1"></select>
+                        <h4>Holiday</h4>
+                        <select id="selHoliday1">
+                            <option value=1>Yes</option>
+                            <option value=0>No</option>
+                        </select>
+                    </div>
                 </div>
-                <div id="container dropdownStyle col-sm">
-                    <h4>Base Price</h4>
-                    <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
-                    <h4>Price</h4>
-                    <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
-                    <h4>Cost</h4>
-                    <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
-                    <br><br>
-                    <button type="button" class="p1" style="margin: auto;">Predict!</button>
+                <div class="col-sm">
+                    <div id="container dropdownStyle">
+                        <h4>Base Price</h4>
+                        <input type="number" id="basePrice1" name="Base Price" required step="0.01" min="1" max="50">
+                        <h4>Price</h4>
+                        <input type="number" id="price1" name="Promotional Price" required step="0.01" min="1" max="50">
+                        <h4>Cost</h4>
+                        <input type="number" id="cost1" name="Cost" required step="0.01" min="1" max="50">
+                    </div>
                 </div>
             </div>
-            </div>
-            <div class="col-sm results">
-                <div class="container">
-                    <h2>Predicted Results</h2>
-                    <div id="modelResults1"></div>
-                </div>
+            <button type="button" class="p1" style="margin: auto;">Predict!</button>
+        </div>
+        <div class="col-sm results">
+            <div class="container">
+                <h2>Predicted Results</h2>
+                <div id="modelResults1"></div>
             </div>
         </div>
     </div>
+</div>
 
 
 
