@@ -9,9 +9,11 @@ color: rgba(195, 7, 63, 1);
 h2 {
     color: #eee;
     text-align: center;
-    font-size: 22px;
+    font-size: 28px;
     margin-top: 15px;
+    margin-bottom: 10px;
 }
+
 
 h3 {
 color: #ddd;
@@ -37,9 +39,9 @@ font-size: 20px;
 }
 
 #dropdownStyle {
-display:block;
-border-width: 3px;
-border-color: lawngreen;
+    display:block;
+    border: 1px solid #e5eaf0;
+    border-color:#eee;
 }
 
 #inputMenu {
@@ -52,10 +54,17 @@ border-color: lawngreen;
 
 input {
     margin-bottom: 5px;
+    width: 25px;
+}
+
+select {
+    width:25px;
 }
 
 button {
-    margin:auto;
+    margin-top: 15px;
+    margin-left:auto;
+    margin-right:auto;
     display:block;
     width:120px;
 }
