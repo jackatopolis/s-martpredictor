@@ -22,7 +22,7 @@ color: #ddd;
 h4 {
     color: #eee;
     font-size: 19px;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
 h5 {
@@ -66,7 +66,7 @@ button {
     margin-left:auto;
     margin-right:auto;
     display:block;
-    width:120px;
+    width:130px;
 }
 
 #modelResults1 {
@@ -79,4 +79,12 @@ button {
 
 .results {
     margin-right: 100px;
+}
+
+#resultsContainer {
+    padding:15px;
+}
+
+.p1 {
+    margin-top:20px;
 }
