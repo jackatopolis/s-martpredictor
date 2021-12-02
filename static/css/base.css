@@ -19,6 +19,10 @@ body {
   background-color: rgba(0, 0, 0, 0.6);
 }
 
+.r1 p {
+  padding-bottom: 5px;
+}
+
 .link-row {
   padding: 20px;
   background-color: rgba(255, 255, 255, 0.6);
@@ -49,8 +53,8 @@ p {
 
 /*********** Navbar Styles ***********/
 .navbar-brand {
-  font-family: "system-ui";
-  font-size: 50px;
+  font-family: "Bangers";
+  font-size: 40px;
   padding: 20px;
 }
 
@@ -67,43 +71,3 @@ p {
 .navbar-brand:hover {
   color: rgba(195, 7, 63, 1) !important;
 }
-
-
-/* body {
-  padding-top: 5rem;
-}
-
-h1 {
-  color: #fff;
-}
-
-h2 {
-  color: #eee;
-  text-align: center;
-}
-
-h3 {
-  color: #ddd;
-}
-
-h4 {
-  color: #ccc;
-}
-
-h5 {
-  color: #bbb;
-}
-
-h6 {
-  color: #aaa;
-}
-
-p {
-  color: #fff;
-  font-size: 20px;
-}
-
-#dropdownStyle {
-  display:block;
-  border-color: lawngreen;
-} */
