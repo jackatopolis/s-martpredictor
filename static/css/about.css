@@ -12,6 +12,7 @@
 
 .single-team .inner .team-img img {
 	width: 100%;
+	height: 400px;
 }
 
 .single-team .inner .team-img::after {
