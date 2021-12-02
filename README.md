@@ -88,6 +88,7 @@ The following tools and methods were used to hypertune the model.
 
 ### Tools
 * Scikit-learn
+* GradientBoostingRegressor
 * GridSearchCV
 
 ### Method
@@ -133,6 +134,11 @@ The prediction tool was deployed on a Heroku webpage through a multi-route Flask
 * Pickle Joblib
 * Pandas
 * SQLite
+* HTML/CSS/JavaScript
+* Bootstrap
+* Font-Awesome
+* D3
+* Jinja
 
 ### Method
 * Import the model and scaler
@@ -149,6 +155,7 @@ The prediction tool was deployed on a Heroku webpage through a multi-route Flask
     * Formats inputs into dataframe
     * Feeds dataframe into scaler and model
     * Returns output back to the webpage
+* Use JavaScript D3 for event handling
 
 - - - -
 - - - -
