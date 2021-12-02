@@ -59,7 +59,7 @@ unique.forEach((element) => {
 
 // BUTTON EVENT HANDLING
 
-d3.selectAll("button.p1").on("click", function () {
+d3.select("button.p1").on("click", function () {
 
     var store = d3.select("#selStore1").property("value");
     var product = d3.select("#selProduct1").property("value");
@@ -96,10 +96,10 @@ d3.selectAll("button.p1").on("click", function () {
             var costT = quantity * cost;
             var profit = revenue - costT;
 
-            document.getElementById("modelResults1").innerHTML = "<br>Quantity Sold:  " + quantity.toFixed(0) +
-                "<br><br>Total Revenue:  $" + revenue.toFixed(2) +
-                "<br><br>Total Cost:  $" + costT.toFixed(2) +
-                "<br><br>Total Profit:  $" + profit.toFixed(2);
+            document.getElementById("modelResults1").innerHTML = "<br>Quantity Sold:   <strong>" + quantity.toFixed(0) + "</strong>" +
+                "<br><br>Total Revenue:   <strong>$" + revenue.toFixed(2) + "</strong>" +
+                "<br><br>Total Cost:   <strong>$" + costT.toFixed(2) + "</strong>" +
+                "<br><br>Total Profit:   <strong>$" + profit.toFixed(2) + "</strong>";
         }
         )
 }
