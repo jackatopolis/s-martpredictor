@@ -1,8 +1,14 @@
-# S-Mart Sales Predictor
+<h1 align="center">S-Mart Sales Predictor</h1>
 
-*John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen*
+<p align="center">John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen</p>
+<p align="center">December 2, 2021</p>
 
-*December 2, 2021*
+<p align="center">
+  <img width="200" src="https://static.wikia.nocookie.net/mythara/images/7/72/S-Mart.jpg/revision/latest?cb=20180730161815" alt="S-mart logo">
+</p>
+
+
+
 
 - - - -
 ## Background
