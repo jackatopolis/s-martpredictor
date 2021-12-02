@@ -6,6 +6,8 @@ December 2, 2021
 ## Background
 Context and explanation for why we did this.
 
+Webpage: https://s-martpredictor.herokuapp.com/
+
 ## Exploratory Data Analysis
 File: eda.ipynb
 
@@ -18,70 +20,43 @@ The first step is acquire a general understanding of the trends and patterns by 
 * Seaborn
 
 ### Observations
-
 1. #### Empirical Cummulative Distribution Function (eCDF)
     * Although in the best week, a store sold more than 2500 units, about 80% of the time, weekly units sold did not exceed 500.
     * Although the highest weekly sales exceeded 25K dollars, over 90% of the data had weekly sales less than 5K dollars.
-
 2. #### Price is dependent on Holiday.
-
 3. #### Units sold is dependent on Holiday.
     * Product 2 is the cheapest product among all the three products, and it sells the most.
     * Product 3 is the most expensive product among all the three products.
     * Additionally, product price did not change during holidays (either it was on promotion or it was not, promotion is independent of Holiday status.)
-
 4. #### Units sold holiday vs non-holiday per store 
 5. #### Product sold holiday vs non-holiday by plotting the data.
-    
     * It does not seem that holidays have a positive impact for the business. For most of the stores, weekly unit sold during the holiday is as same as the normal days, while store 10 had a decrease during the holidays.
     * Weekly units sold for product 1 had a slightly increase during the holidays, while product 2 and product 3 had a decrease during the holidays.
-
 6. #### Product units sold based on price and holiday. 
-    
     * Every product has more than one prices, both at holidays and normal days. The assumption is that one is regular price, another is promotional price.
     * The price gap for product 3 is huge, it was slashed to almost 50% off during promotions.
     * Product 3 made the most sales during non-holidays.
-
 7. #### Product in each store vs units sold and price.
-    
     * All of these 9 stores carry these 3 products. They all seem to have similar kind of discount promotions. However, product 3 sells the most units during promotions at store 10.
-
 8. #### Yearly seasonality per store.
-    
     * Every store has somewhat seasonality, store 10 has the most obvious seasonal pattern.
-
 9. #### Seasonality per product.
-
     * Every product has somewhat seasonality, product 2 has two peak seasons per year and product 3 has one.
-
 10. #### Seasonality per product per store in units sold.
-
     * In general, product 2 sells more units per week than the other products in every store.
     * Once a while, product 3 would exceed product 2 at store 10.
-
 11. #### How holiday and price effect sales by plotting the data.
-    
     * The cheaper the price, the more weekly units were sold.
     * Is holiday or not has nothing to do with the unit sold.
-
 12. #### Units sold vs promotion per store.
-    
     * Every store sells more during the promotions, there is no exception.
-
 13. #### Units sold per product while on or off promotion. 
-    
     * Every product sells more during the promotions, in particular, product 2 and product 3.
-
 14. #### Distribution of price and promotion distribution for units sold.
-
     * All the stores have the similar price promotion pattern, for some reason, store 10 sells the most during the promotions.
-
 15. #### Price change while on and off promotion and the change in sales.
-    
     * Every product has the regular price and promotional price. Product 3 has the highest discount and sells the most during the promotions.
-
 16. #### Observation Summary
-    
     * Store 10 has the highest average weekly sales among all 9 stores, also Store 10 has the most total weekly units sold.
     * Store 5 has the lowest average weekly sales.
     * The data is 429 weeks beginning 2/5/2010 and ending 10/26/2012. This is 143 weeks of data for 9 stores and 3 products. 
@@ -112,65 +87,97 @@ The following tools and methods were used to hypertune the model.
 * GridSearchCV
 
 ### Method
-
 1. #### Create Gradient Boosting Regression
-    * Split data
+    * Train, Test, Split the data
     * Scale the data
     * Calculating Cross Validation Score across multiple testing sets
      * Classifications use Accuracy and F1 Score
      * Regressions use R2 Score and Mean Absolute Error (MAE)
     * Create a model using Gradient Boosting Regression
-    * for 
-    # all other steps will be same as classification as shown above
-2. Feature Importance on the Model
+2. #### Feature Importance on the Model
     * Create a plot of the features
     * Generate a cross validation score
-3. Hypertuning the Model
+3. #### Hypertuning the Model
     * Set the parameters
     * Tune the model using GridSearchCV
     * Generate predictions
     * Generate r-squared and validate
-4. Final Hypertuned Model
-    # create a model using the optimized values
-    # Split data
-    # Scale the data
-    # Calculating Cross Validation Score across multiple testing sets
-    # for classification we use accuracy and F1 score
-    # for regression we use R2 score and MAE(mean absolute error)
-    # all other steps will be same as classification as shown above
-    # X_test_scaled['Weekly_Units_Sold']= pred
-5. Feature Importance on the Hypertuned Model
-    # plot the features for the optimized model
-6. Export Model
-    # Save the model
-    # Save the scaler
-    # Load the model 
+4. #### Final Hypertuned Model
+    * Create a model using the optimized values
+    * Train, Test, Split the data
+    * Scale the data
+    * Calculating Cross Validation Score across multiple testing sets
+     * Classifications use Accuracy and F1 Score
+     * Regressions use R2 Score and Mean Absolute Error (MAE)
+    * X_test_scaled['Weekly_Units_Sold'] = pred
+5. #### Feature Importance on the Hypertuned Model
+    * Plot the features for the optimized model
+6. #### Export Model
+    * Save the model and scaler for deployment
 
-# Deployment:
-# using flask, joblib, pandas and pickle
-# create the model
-# loads scaler in, check filename
-# create the web pages
-    # Home Page
-    # Predictor
-    # Data Page
-    # EDA Page
-    # Model Page
-    # About Page
-    # Error Handler Page
+## Deployment
+File: app.py
 
-# Project and Documentation Uploaded to GitHub:
+Webpage: https://s-martpredictor.herokuapp.com/
+
+The prediction tool was deployed on a Heroku webpage through a multi-route Flask application. The following tools and methods were used.
+
+### Tools
+* Heroku
+* Flask
+* Pickle Joblib
+* Pandas
+* SQLite
+
+### Method
+* Import the model and scaler
+* Create the webpage's application routes
+    * Home Page
+    * Predictor
+    * Data Page
+    * EDA Page
+    * Model Page
+    * About Page
+    * Error Handler Page
+* Create POST method route
+    * Fetches information from webpage inputs
+    * Formats inputs into dataframe
+    * Feeds dataframe into scaler and model
+    * Returns output back to the webpage
+
+
+
+
+# IMPORTANT RUBRIC NOTES (DELETE WHEN DONE)
+
+Project and Documentation Uploaded to GitHub:
+
 Successfully uploaded to GitHub;
+
 demonstrating professional quality of presentation
+
 GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use	
+
 The README is customized to a professional level 
+
 Group Presentation 
-    All group members spoke during presentation
-    Group was well prepared
-    Presentation was relevant to material
-    Presentation maintains audience interest 
+
+All group members spoke during presentation
+
+Group was well prepared
+
+Presentation was relevant to material
+
+Presentation maintains audience interest 
+
 Slide Deck 
-    Slides are visually clean and professional
-    Slides are relevant to material
-    Slides effectively demonstrate project
-    Slides are clear and maintain audience interest
+
+Slides are visually clean and professional
+
+Slides are relevant to material
+
+Slides effectively demonstrate project
+
+Slides are clear and maintain audience interest
+
+
