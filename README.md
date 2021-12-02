@@ -9,7 +9,7 @@ Context and explanation for why we did this.
 Webpage: https://s-martpredictor.herokuapp.com/
 
 ## Exploratory Data Analysis
-File: eda.ipynb
+***File: eda.ipynb***
 
 The first step is acquire a general understanding of the trends and patterns by exploring the dataset. Plotting the data in various ways using the tools outlined led to the following observations.
 
