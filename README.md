@@ -3,13 +3,10 @@
 
 <br>
 
-## Exploratory Data Analysis (eda.ipynb):
+## Exploratory Data Analysis
+File: eda.ipynb
 
-
-
-* ### empirical Cummulative Distribution Function, eCDF 
-
-
+* ### Empirical Cummulative Distribution Function (eCDF)
     * Although in the best week, a store sold more than 2500 units, about 80% of the time, weekly units sold did not exceed 500.
     * Although the highest weekly sales exceeded 25K dollars, over 90% of the data had weekly sales less than 5K dollars.
 
@@ -17,8 +14,6 @@
 * ### Price dependent on Holiday.
 
 * ### Units sold dependent on Holiday.
-
-
     * Product 2 is the cheapest product among all the three products, and it sells the most.
     * Product 3 is the most expensive product among all the three products.
     * Additionally, product price did not change during holidays (either it was on promotion or it was not, promotion is independent of Holiday status.)
