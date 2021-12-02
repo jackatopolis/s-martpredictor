@@ -23,7 +23,7 @@ Webpage: https://s-martpredictor.herokuapp.com/
 ## Exploratory Data Analysis
 ***File: eda.ipynb***
 
-The first step is acquire a general understanding of the trends and patterns by exploring the dataset. Plotting the data in various ways using the tools outlined led to the following observations.
+The first step is to acquire a general understanding of the trends and patterns by exploring the dataset. Plotting the data in various ways using the tools outlined led to the following observations.
 
 ### Tools
 * Jupyter Notebook
@@ -33,42 +33,53 @@ The first step is acquire a general understanding of the trends and patterns by 
 
 ### Observations
 1. #### Empirical Cummulative Distribution Function (eCDF)
+    > ![image](https://user-images.githubusercontent.com/83737584/144514923-62e05937-f99d-4d4c-a19b-e4be7c1b6469.png)
+
     * Although in the best week, a store sold more than 2500 units, about 80% of the time, weekly units sold did not exceed 500.
     * Although the highest weekly sales exceeded 25K dollars, over 90% of the data had weekly sales less than 5K dollars.
-2. #### Price dependent on Holiday
-3. #### Units sold is dependent on Holiday
+2. #### Price Is Not Dependent On Holiday
+    > ![image](https://user-images.githubusercontent.com/83737584/144515125-463d7a84-152d-4ac3-824e-15edbab3807f.png)
+
+3. #### Units Sold IS Dependent On Holiday
+    > ![image](https://user-images.githubusercontent.com/83737584/144515214-d89cc946-dc24-4d56-8eed-2f05c2610f13.png)
+
     * Product 2 is the cheapest product among all the three products, and it sells the most.
     * Product 3 is the most expensive product among all the three products.
     * Additionally, product price did not change during holidays (either it was on promotion or it was not, promotion is independent of Holiday status.)
-4. #### Units sold holiday vs non-holiday per store 
-5. #### Product sold holiday vs non-holiday by plotting the data
-    * It does not seem that holidays have a positive impact for the business. For most of the stores, weekly unit sold during the holiday is as same as the normal days, while store 10 had a decrease during the holidays.
-    * Weekly units sold for product 1 had a slightly increase during the holidays, while product 2 and product 3 had a decrease during the holidays.
-6. #### Product units sold based on price and holiday
+4. #### Units Sold: Holiday vs Non-Holiday per Store 
+    > ![image](https://user-images.githubusercontent.com/83737584/144515411-b8813d33-6e04-41c0-93b4-36a3a4e9704e.png)
+
+5. #### Product Sold: Holiday vs Non-Holiday 
+    > ![image](https://user-images.githubusercontent.com/83737584/144515527-a589af67-c33d-4838-9154-dc2e15c0bd6b.png)
+
+    * It does not seem that holidays have a positive impact for the business. For most of the stores, weekly units sold during the holiday is the same as the normal days, while store 10 actually had a decrease during the holidays.
+    * Weekly units sold for product 1 had a slight increase during the holidays, while product 2 and product 3 had a decrease during the holidays.
+6. #### Product Units Sold Based on Price and Holiday
+    > 
     * Every product has more than one prices, both at holidays and normal days. The assumption is that one is regular price, another is promotional price.
     * The price gap for product 3 is huge, it was slashed to almost 50% off during promotions.
     * Product 3 made the most sales during non-holidays.
-7. #### Product in each store vs units sold and price
+8. #### Product in each store vs units sold and price
     * All of these 9 stores carry these 3 products. They all seem to have similar kind of discount promotions. However, product 3 sells the most units during promotions at store 10.
-8. #### Yearly seasonality per store
+9. #### Yearly seasonality per store
     * Every store has somewhat seasonality, store 10 has the most obvious seasonal pattern.
-9. #### Seasonality per product
+10. #### Seasonality per product
     * Every product has somewhat seasonality, product 2 has two peak seasons per year and product 3 has one.
-10. #### Seasonality per product per store in units sold
+11. #### Seasonality per product per store in units sold
     * In general, product 2 sells more units per week than the other products in every store.
     * Once a while, product 3 would exceed product 2 at store 10.
-11. #### How holiday and price effect sales by plotting the data
+12. #### How holiday and price effect sales by plotting the data
     * The cheaper the price, the more weekly units were sold.
     * Is holiday or not has nothing to do with the unit sold.
-12. #### Units sold vs promotion per store
+13. #### Units sold vs promotion per store
     * Every store sells more during the promotions, there is no exception.
-13. #### Units sold per product while on or off promotion
+14. #### Units sold per product while on or off promotion
     * Every product sells more during the promotions, in particular, product 2 and product 3.
-14. #### Distribution of price and promotion distribution for units sold
+15. #### Distribution of price and promotion distribution for units sold
     * All the stores have the similar price promotion pattern, for some reason, store 10 sells the most during the promotions.
-15. #### Price change while on and off promotion and the change in sales
+16. #### Price change while on and off promotion and the change in sales
     * Every product has the regular price and promotional price. Product 3 has the highest discount and sells the most during the promotions.
-16. #### Observation Summary
+17. #### Observation Summary
     * Store 10 has the highest average weekly sales among all 9 stores, also Store 10 has the most total weekly units sold.
     * Store 5 has the lowest average weekly sales.
     * The data is 429 weeks beginning 2/5/2010 and ending 10/26/2012. This is 143 weeks of data for 9 stores and 3 products. 
