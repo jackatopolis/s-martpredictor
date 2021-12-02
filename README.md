@@ -1,7 +1,6 @@
-# S-Mart Predictor
-John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen
-
-December 2, 2021
+# S-Mart Sales Predictor
+*John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen*
+*December 2, 2021*
 
 ## Background
 Context and explanation for why we did this.
@@ -71,12 +70,12 @@ The first step is acquire a general understanding of the trends and patterns by 
     * It is not unusual to sell more during promotion than the normal days. Store 10 has made Product 3 the best selling product around July to September.
 
 ## Model Exploration
-File: model.ipynb
+***File: model.ipynb***
 
 X, Y, and Z models were explored. Why each was explored. Etc.
 
 ## Model Hyper Tuning
-File: hypertuning.ipynb
+***File: hypertuning.ipynb***
 
 After exploring potential models, we hypertuned the parameters to increase score to validate etc. 
 
@@ -116,7 +115,7 @@ The following tools and methods were used to hypertune the model.
     * Save the model and scaler for deployment
 
 ## Deployment
-File: app.py
+***File: app.py***
 
 Webpage: https://s-martpredictor.herokuapp.com/
 
@@ -144,6 +143,7 @@ The prediction tool was deployed on a Heroku webpage through a multi-route Flask
     * Formats inputs into dataframe
     * Feeds dataframe into scaler and model
     * Returns output back to the webpage
+
 
 
 
