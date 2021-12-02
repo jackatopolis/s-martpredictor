@@ -3,81 +3,79 @@
 {% block content %}
 
 <link href="static/css/home.css" rel="stylesheet" />
-<script
-  src="https://kit.fontawesome.com/8502dc2626.js"
-  crossorigin="anonymous"
-></script>
-<link
-  rel="stylesheet"
-  href="https://fonts.googleapis.com/css?family=Sofia|Urbanist|Bangers|Patrick+Hand&display=swap"
-/>
+<script src="https://kit.fontawesome.com/8502dc2626.js" crossorigin="anonymous"></script>
+<link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Sofia|Urbanist|Bangers|Patrick+Hand&display=swap" />
 <title>Home</title>
 </head>
+
 <body>
-<div class="jumbotron jumbotron-fluid">
-  <div class="container">
-    <div class="row header-row r1">
-      <h1 class="display-1 text-center">S-Mart: Shop Smart, Shop S-Mart!</h1>
-      <p class="lead text-center">
-        For S-Mart and other retailers, setting the right price for a given product is critical
-        for maximizing sales and profits.
-        If the price is too low, profit per unit will be too low to
-        maintain. If the price is too high, the units sold will be too low
-        to maintain and product will be wasted sitting on the shelves. To maximize profits, 
-        the business needs to find the optimum price. 
-      </p>
-      <p class="lead text-center">
-        Using S-Mart's sales data, our team has trained a machine learning model that will predict the units sold and calculate the estimated revenue for a given scenario. 
-        S-mart stores can use this sales prediction tool to ensure that they are properly stocked and 
-        staffed for the coming week's sales.
-      </p>
-      <p class="lead text-center">(Important note: This page is for learning purposes ONLY and is not meant to be reflective of any actual business. The data is not actual data. However, if you are interested in our work please see our about page for contact information.) 
-      </p>
-    </div>
-    <div class="row link-row">
-      <div class="col-sm text-center">
-        <a class="link" href="/predictor">
-          <i class="fa fa-search-dollar fa-6x"></i>
-          <br />
-          <h3>Predictor</h3>
-        </a>
+  <div class="jumbotron jumbotron-fluid">
+    <div class="container">
+      <div class="row header-row r1">
+        <h1 class="display-1 text-center">S-Mart: Shop Smart, Shop S-Mart!</h1>
+        <p class="lead text-center">
+          For S-Mart and other retailers, setting the right price for a given product is critical
+          for maximizing sales and profits.
+          If the price is too low, profit per unit will be too low to
+          maintain. If the price is too high, the units sold will be too low
+          to maintain and product will be wasted sitting on the shelves. To maximize profits,
+          the business needs to find the optimum price.
+        </p>
+        <p class="lead text-center">
+          Using S-Mart's sales data, our team has trained a machine learning model that will predict the units sold and
+          calculate the estimated revenue for a given scenario.
+          S-mart stores can use this sales prediction tool to ensure that they are properly stocked and
+          staffed for the coming week's sales.
+        </p>
+        <p class="lead text-center">(Important note: This page is for learning purposes ONLY and is not meant to be
+          reflective of any actual business. The data is not actual data. However, if you are interested in our work
+          please see our about page for contact information.)
+        </p>
       </div>
+      <div class="row link-row">
         <div class="col-sm text-center">
-          <a class="link" href="https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/hypertuning.ipynb">
+          <a class="link" href="/predictor">
+            <i class="fa fa-search-dollar fa-6x"></i>
+            <br />
+            <h3>Predictor</h3>
+          </a>
+        </div>
+        <div class="col-sm text-center">
+          <a class="link"
+            href="https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/hypertuning.ipynb">
             <i class="fas fa-brain fa-6x"></i>
-            <br/>
+            <br />
             <h3>Model</h3>
           </a>
         </div>
-      <div class="col-sm text-center">
-        <a class="link" href="https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/eda.ipynb">
-          <i class="fa fa-project-diagram fa-6x"></i>
-          <br />
-          <h3>EDA</h3>
-        </a>
-      </div>
-      <div class="col-sm text-center">
-        <a class="link" href="/data">
-          <i class="fa fa-poll fa-6x"></i>
-          <br />
-          <h3>Data</h3>
-        </a>
-      </div>
-      <div class="col-sm text-center">
-        <a class="link" href="/about">
-          <i class="fa fa-address-card fa-6x"></i>
-          <br />
-          <h3>About</h3>
-        </a>
-      </div>
+        <div class="col-sm text-center">
+          <a class="link" href="https://github.com/jackatopolis/s-martpredictor/blob/main/static/data/eda.ipynb">
+            <i class="fa fa-project-diagram fa-6x"></i>
+            <br />
+            <h3>EDA</h3>
+          </a>
+        </div>
+        <div class="col-sm text-center">
+          <a class="link" href="/data">
+            <i class="fa fa-poll fa-6x"></i>
+            <br />
+            <h3>Data</h3>
+          </a>
+        </div>
+        <div class="col-sm text-center">
+          <a class="link" href="/about">
+            <i class="fa fa-address-card fa-6x"></i>
+            <br />
+            <h3>About</h3>
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
-<script
-  src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
-  integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
-  crossorigin="anonymous"
-></script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.min.js"
+    integrity="sha384-skAcpIdS7UcVUC05LJ9Dxay8AXcDYfBJqt1CJ85S/CFujBsIzCIv+l9liuYLaMQ/"
+    crossorigin="anonymous"></script>
 
-{% endblock %}
+  {% endblock %}
