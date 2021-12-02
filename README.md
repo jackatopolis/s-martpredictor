@@ -4,15 +4,11 @@
 <p align="center">December 2, 2021</p>
 
 <p align="center">
-  <img width="200" src="https://static.wikia.nocookie.net/mythara/images/7/72/S-Mart.jpg/revision/latest?cb=20180730161815" alt="S-mart logo">
+  <img width="250" src="images/S_mart-removebg-preview.png" alt="S-mart logo">
 </p>
 
-
-
-
-- - - -
 ## Background
-Context and explanation for why we did this.
+TO DO: Context and explanation for why we did this.
 
 Webpage: https://s-martpredictor.herokuapp.com/
 
@@ -82,11 +78,15 @@ The first step is acquire a general understanding of the trends and patterns by 
 ## Model Exploration
 ***File: model.ipynb***
 
+TO DO: 
+
 X, Y, and Z models were explored. Why each was explored. Etc.
 
 - - - -
 ## Model Hyper Tuning
 ***File: hypertuning.ipynb***
+
+TO DO: 
 
 After exploring potential models, we hypertuned the parameters to increase score to validate etc. 
 
