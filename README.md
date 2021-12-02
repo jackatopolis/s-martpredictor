@@ -1,5 +1,6 @@
 # S-Mart Sales Predictor
 *John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen*
+
 *December 2, 2021*
 
 ## Background
