@@ -1,19 +1,30 @@
 # S-Mart Predictor
-> Members:  John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen
+John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen
+December 2, 2021
 
-<br>
+## Background
+Context and explanation for why we did this.
 
 ## Exploratory Data Analysis
 File: eda.ipynb
+<br>
+The first step is acquire a general understanding of the trends and patterns by exploring the dataset. Plotting the data in various ways using the tools outlined led to the following observations.
 
-* ### Empirical Cummulative Distribution Function (eCDF)
+### Tools
+    * Jupyter Notebook
+    * Python Pandas
+    * Python Matplotlib
+    * Seaborn
+
+### Observations
+
+* #### Empirical Cummulative Distribution Function (eCDF)
     * Although in the best week, a store sold more than 2500 units, about 80% of the time, weekly units sold did not exceed 500.
     * Although the highest weekly sales exceeded 25K dollars, over 90% of the data had weekly sales less than 5K dollars.
 
+* #### Price is dependent on Holiday.
 
-* ### Price dependent on Holiday.
-
-* ### Units sold dependent on Holiday.
+* #### Units sold is dependent on Holiday.
     * Product 2 is the cheapest product among all the three products, and it sells the most.
     * Product 3 is the most expensive product among all the three products.
     * Additionally, product price did not change during holidays (either it was on promotion or it was not, promotion is independent of Holiday status.)
@@ -68,43 +79,39 @@ File: eda.ipynb
     
     * Every product has the regular price and promotional price. Product 3 has the highest discount and sells the most during the promotions.
 
-## Observations:
+* ### Observation Summary
     
     * Store 10 has the highest average weekly sales among all 9 stores, also Store 10 has the most total weekly units sold.
-    
     * Store 5 has the lowest average weekly sales.
-    
     * The data is 429 weeks beginning 2/5/2010 and ending 10/26/2012. This is 143 weeks of data for 9 stores and 3 products. 
-    
     * The data is evenly distributed. No gaps or staggered start and stop dates.
-    
     * The most selling and crowded Store is Store 10, and the least crowded store is Store 5.
-    
     * In terms of number of units sold, the most selling product is product 2 throughout the year.
-    
     * Stores do not necessarily run product promotions during holidays.
-    
     * Product 2 seems to be the cheapest product, and Product 3 is the most expensive product.
-    
     * Most stores have some kind of seasonality and they have two peak seasons per year.
-    
     * Product 1 sells a little more in February than the other months, Product 2 sells the most around April and July, and Product 3 sells the most around July to September.
-    
     * Each product has its regular price and promotional price. There isn’t significant gap between regular price and promotional price on Product 1 and Product 2, however, Product 3’s promotional price can be slashed to 50% of its original price. Although every store makes this kind of price cut for product 3, store 10 is the one made the highest sales during the price cut.
-    
-    * It is nothing unusual to sell more during promotion than the normal days. Store 10 has made Product 3 the best selling product around July to September.
+    * It is not unusual to sell more during promotion than the normal days. Store 10 has made Product 3 the best selling product around July to September.
 
-## Model Exploration (model.ipynb):
+## Model Exploration
+File: model.ipynb
+<br>
+X, Y, and Z models were explored. Etc.
 
-## Model Hyper Tuning (hypertuning.ipynb): 		
+## Model Hyper Tuning
+File: hypertuning.ipynb
+<br>
+After exploring potential models, the hypertuned the parameters
 
 * ### Gradient Boosting Regression
-    # Split data
-    # Scale the data
-    # Calculating Cross Validation Score across multiple testing sets
-        # for classification we use accuracy and F1 score
-    # create a model using Gradient Boosting Regression
-    # for regression we use R2 score and MAE(mean absolute error)
+    * Split data
+    * Scale the data
+    * Calculating Cross Validation Score across multiple testing sets
+     * Classifications use Accuracy and F1 Score
+     * Regressions use R2 Score and Mean Absolute Error (MAE)
+    * Create a model using Gradient Boosting Regression
+    * for 
     # all other steps will be same as classification as shown above
 # Feature Importance on the Model
     # create a plot of the features
