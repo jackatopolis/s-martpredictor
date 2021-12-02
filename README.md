@@ -1,5 +1,6 @@
 # S-Mart Predictor
 John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen
+
 December 2, 2021
 
 ## Background
@@ -7,14 +8,14 @@ Context and explanation for why we did this.
 
 ## Exploratory Data Analysis
 File: eda.ipynb
-<br>
+
 The first step is acquire a general understanding of the trends and patterns by exploring the dataset. Plotting the data in various ways using the tools outlined led to the following observations.
 
 ### Tools
-    * Jupyter Notebook
-    * Python Pandas
-    * Python Matplotlib
-    * Seaborn
+* Jupyter Notebook
+* Python Pandas
+* Python Matplotlib
+* Seaborn
 
 ### Observations
 
