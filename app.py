@@ -1,28 +1,29 @@
+# Import dependencies
 from flask import Flask, render_template, request, jsonify
 import joblib
 import pandas as pd
 import pickle as pkl
 
+# Initialize Flask app
 app = Flask(__name__)
 
+# Load ML model and data scaler
 model = joblib.load('static/data/Resources/model.joblib')
-# loads scaler in, check filename
 scaler = joblib.load('static/data/Resources/scaler.joblib')
 
+
 # Home Page
-
-
 @ app.route('/')
 def home():
     return render_template('home.html')
 
 
-# Predictor
+# Predictor Page
 @ app.route('/predictor')
 def predictor():
     return render_template('predictor.html')
 
-
+# Prediction API fetch
 @ app.route('/predict', methods=['POST'])
 def predict():
 
@@ -71,6 +72,7 @@ def projections():
     return render_template('projections.html')
 
 
+#
 @ app.route('/predict_projections', methods=['POST'])
 def predict_projections():
 
@@ -103,7 +105,6 @@ def predict_projections():
         data["Price"] = [int(dataInput["price"])]
         data["Is_Holiday"] = [int(dataInput["holiday"])]
 
-
     except:
         return jsonify({'quantity': -1})
 
@@ -119,26 +120,13 @@ def data():
     return render_template('data.html')
 
 
-# Model Page
-@app.route('/eda')
-def eda():
-    return render_template('eda.html')
-
-# Model Page
-@app.route('/model')
-def hypertuning():
-    return render_template('model.html')
-
 # About Page
-
-
 @app.route('/about')
 def about():
     return render_template('about.html')
 
+
 # Error Handler Page
-
-
 @app.errorhandler(404)
 def page_not_found(error):
     return render_template('404.html'), 404
