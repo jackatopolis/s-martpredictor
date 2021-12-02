@@ -1,6 +1,8 @@
 <h1 align="center">S-Mart Sales Predictor</h1>
 
 <p align="center">John Clos, Uchenna Nwagbara, Sharon Colson, Jack Cohen</p>
+
+<p align="center">https://s-martpredictor.herokuapp.com/</p>
 <p align="center">December 2, 2021</p>
 
 <p align="center">
@@ -8,7 +10,12 @@
 </p>
 
 ## Background
-TO DO: Context and explanation for why we did this.
+
+For S-Mart and other retailers, setting the right price for a given product is critical for maximizing sales and profits. If the price is too low, profit per unit will be too low to maintain. If the price is too high, the units sold will be too low to maintain and product will be wasted sitting on the shelves. To maximize profits, the business needs to find the optimum price.
+
+Using S-Mart's sales data, our team has trained a machine learning model that will predict the units sold and calculate the estimated revenue for a given scenario. S-mart stores can use this sales prediction tool to ensure that they are properly stocked and staffed for the coming week's sales.
+
+Important note: This page is for learning purposes only and is not meant to be reflective of any actual business. The data is not actual data. However, if you are interested in our work please see our about page for contact information.
 
 Webpage: https://s-martpredictor.herokuapp.com/
 
@@ -78,7 +85,7 @@ The first step is acquire a general understanding of the trends and patterns by 
 ## Model Exploration
 ***File: model.ipynb***
 
-TO DO: 
+TO DO: SHARON?
 
 X, Y, and Z models were explored. Why each was explored. Etc.
 
@@ -86,7 +93,7 @@ X, Y, and Z models were explored. Why each was explored. Etc.
 ## Model Hyper Tuning
 ***File: hypertuning.ipynb***
 
-TO DO: 
+TO DO: ADD MORE
 
 After exploring potential models, we hypertuned the parameters to increase score to validate etc. 
 
@@ -167,6 +174,10 @@ The prediction tool was deployed on a Heroku webpage through a multi-route Flask
 - - - -
 - - - -
 
+# TO DO: 
+- Add initial paragraph for each section
+  - Model Exploration: Sharon/John
+  - Model Hyper Tuning
 
 
 
