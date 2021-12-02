@@ -67,3 +67,9 @@ h2 {
 body {
 	padding-bottom: 30px;
 }
+
+.navbar-brand {
+	font-family: "Bangers";
+	font-size: 40px;
+	padding: 20px;
+  }
