@@ -60,7 +60,8 @@ def predict():
         return jsonify({'quantity': -1})
 
     input_df = pd.DataFrame(data)
-    output = model.predict(input_df)
+    input_scaled = scaler.transform(input_df)
+    output = model.predict(input_scaled)
 
     return jsonify({"quantity": output[0]})
 
