@@ -37,7 +37,7 @@ def predict():
             else:
                 data[f"week_of_year_{x+1}"] = [0]
         for x in range(10):
-            if int(dataInput['store']) == x and x+1 != 9:
+            if int(dataInput['store']) == x+1 and x+1 != 9:
                 data[f"Store_{x+1}"] = [1]
             elif x+1 != 9:
                 data[f"Store_{x+1}"] = [0]
