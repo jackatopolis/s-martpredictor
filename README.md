@@ -55,31 +55,50 @@ The first step is to acquire a general understanding of the trends and patterns 
     * It does not seem that holidays have a positive impact for the business. For most of the stores, weekly units sold during the holiday is the same as the normal days, while store 10 actually had a decrease during the holidays.
     * Weekly units sold for product 1 had a slight increase during the holidays, while product 2 and product 3 had a decrease during the holidays.
 6. #### Product Units Sold Based on Price and Holiday
-    > 
-    * Every product has more than one prices, both at holidays and normal days. The assumption is that one is regular price, another is promotional price.
+    > ![image](https://user-images.githubusercontent.com/83737584/144524798-df56a0d5-ef45-4e7c-94e7-1e1293e5e23e.png)
+
+    * Every product has more than one price, both at holidays and normal days. The assumption is that one is regular price, another is promotional price.
     * The price gap for product 3 is huge, it was slashed to almost 50% off during promotions.
     * Product 3 made the most sales during non-holidays.
-8. #### Product in each store vs units sold and price
-    * All of these 9 stores carry these 3 products. They all seem to have similar kind of discount promotions. However, product 3 sells the most units during promotions at store 10.
-9. #### Yearly seasonality per store
+7. #### Product In Each Store vs Units Sold and Price
+    > ![image](https://user-images.githubusercontent.com/83737584/144524939-b7824440-76ec-4474-bb4e-1a5168a56986.png)
+
+    * All of these 9 stores carry these 3 products. They all seem to have similar kinds of discount promotions. However, product 3 sells the most units during promotions at store 10.
+8. #### Yearly Seasonality per Store
+    > ![image](https://user-images.githubusercontent.com/83737584/144525053-bac7647d-6c4c-4a89-af4e-f1d7140a6d27.png)
+
     * Every store has somewhat seasonality, store 10 has the most obvious seasonal pattern.
-10. #### Seasonality per product
+9. #### Seasonality per Product
+    > ![image](https://user-images.githubusercontent.com/83737584/144525123-7d96a20e-a56a-4415-909c-ed1a0485f349.png)
+
     * Every product has somewhat seasonality, product 2 has two peak seasons per year and product 3 has one.
-11. #### Seasonality per product per store in units sold
+10. #### Seasonality per Product per Store in Units Sold
+    > ![image](https://user-images.githubusercontent.com/83737584/144525247-27576d7f-abf6-4db9-99ca-a539864473c1.png)
+
     * In general, product 2 sells more units per week than the other products in every store.
     * Once a while, product 3 would exceed product 2 at store 10.
-12. #### How holiday and price effect sales by plotting the data
+11. #### Holiday and Price Effect On Sales
+    > ![image](https://user-images.githubusercontent.com/83737584/144525389-1b45acfe-3324-46d1-8112-f7c38ba0a9c4.png)
+
     * The cheaper the price, the more weekly units were sold.
     * Is holiday or not has nothing to do with the unit sold.
-13. #### Units sold vs promotion per store
+12. #### Units Sold vs Promotion per Store
+    > ![image](https://user-images.githubusercontent.com/83737584/144525502-99c8ab46-977d-4bbc-bab0-c8e532e7cd90.png)
+
     * Every store sells more during the promotions, there is no exception.
-14. #### Units sold per product while on or off promotion
+13. #### Units Sold per Product While On or Off Promotion
+    > ![image](https://user-images.githubusercontent.com/83737584/144525580-179c8f0a-f374-45e1-97e5-dad7369940b8.png)
+
     * Every product sells more during the promotions, in particular, product 2 and product 3.
-15. #### Distribution of price and promotion distribution for units sold
+14. #### Distribution of Price and Promotion 
+    > ![image](https://user-images.githubusercontent.com/83737584/144525646-2a4ae93c-20d3-4e6b-b93c-7375039629e1.png)
+
     * All the stores have the similar price promotion pattern, for some reason, store 10 sells the most during the promotions.
-16. #### Price change while on and off promotion and the change in sales
+15. #### Price Change While On and Off Promotion and the Change in Sales
+    > ![image](https://user-images.githubusercontent.com/83737584/144525761-4cf350a4-91cb-41bc-8e57-725adda173ca.png)
+
     * Every product has the regular price and promotional price. Product 3 has the highest discount and sells the most during the promotions.
-17. #### Observation Summary
+16. #### Observation Summary:
     * Store 10 has the highest average weekly sales among all 9 stores, also Store 10 has the most total weekly units sold.
     * Store 5 has the lowest average weekly sales.
     * The data is 429 weeks beginning 2/5/2010 and ending 10/26/2012. This is 143 weeks of data for 9 stores and 3 products. 
@@ -96,24 +115,26 @@ The first step is to acquire a general understanding of the trends and patterns 
 ## Model Exploration
 ***File: model.ipynb***
 
-TO DO: SHARON?
+### Tools
+* Scikit-learn
+* Cross Validation
 
-X, Y, and Z models were explored. Why each was explored. Etc.
+After completing our EDA we chose to run regression to predict the numerical value Weekly Units Sold. We first encoded the data using One-Hot Encoding, then split the data for training and testing, and scaled it. We tested the data on 14 different models before finalizing our model as the Gradient Boost Regressor which gave the highest accuracy by using decision stumps to boost weak features. 
+> ![image](https://user-images.githubusercontent.com/83737584/144526568-57e867c9-9562-4719-8d8f-c94d8f975a03.png)
+> ![image](https://user-images.githubusercontent.com/83737584/144526594-6224abaa-674e-421c-90d5-30b1cd74fa87.png)
 
 - - - -
 ## Model Hyper Tuning
 ***File: hypertuning.ipynb***
 
-TO DO: ADD MORE
-
-After exploring potential models, we hypertuned the parameters to increase score to validate etc. 
-
-The following tools and methods were used to hypertune the model.
-
 ### Tools
 * Scikit-learn
 * GradientBoostingRegressor
 * GridSearchCV
+
+After exploring potential models, we then began hypertuning the parameters incrementaly to increase accuracy score. 
+
+The following tools and methods were used for this process.
 
 ### Method
 1. #### Create Gradient Boosting Regression
@@ -143,6 +164,8 @@ The following tools and methods were used to hypertune the model.
     * Plot the features for the optimized model
 6. #### Export Model
     * Save the model and scaler for deployment
+> ![image](https://user-images.githubusercontent.com/83737584/144526944-c9b64e80-6d97-4e1f-9841-19ed7b01022d.png)
+> ![image](https://user-images.githubusercontent.com/83737584/144526964-4f944793-d075-46aa-9f5f-15bdd7deeb35.png)
 
 - - - -
 ## Model Deployment
@@ -180,48 +203,30 @@ The prediction tool was deployed on a Heroku webpage through a multi-route Flask
     * Feeds dataframe into scaler and model
     * Returns output back to the webpage
 * Use JavaScript D3 for event handling
-
-- - - -
-- - - -
-- - - -
-
-# TO DO: 
-- Add initial paragraph for each section
-  - Model Exploration: Sharon/John
-  - Model Hyper Tuning
+> ![image](https://user-images.githubusercontent.com/83737584/144527893-cfd2d418-6275-46a4-8ca5-5f6e63b14606.png)
 
 
+<hr>
+Contacts:
+<hr>
 
-# IMPORTANT RUBRIC NOTES (DELETE WHEN DONE)
+Sharon Colson:
+* https://www.linkedin.com/in/sharon-colson
+* sharon.colson@gmail.com
+<hr>
 
-Project and Documentation Uploaded to GitHub:
+Jack Cohen:
+* https://www.linkedin.com/in/jack-cohen-6b573213a
+* https://github.com/jackatopolis
+<hr>
 
-Successfully uploaded to GitHub;
+Uchenna Nwagbara:
+* https://www.linkedin.com/in/uchenna-nwagbara-83b613172
+* https://github.com/uchenna23
+<hr>
 
-demonstrating professional quality of presentation
-
-GitHub repository is free of unnecessary files and folders and has an appropriate .gitignore in use	
-
-The README is customized to a professional level 
-
-Group Presentation 
-
-All group members spoke during presentation
-
-Group was well prepared
-
-Presentation was relevant to material
-
-Presentation maintains audience interest 
-
-Slide Deck 
-
-Slides are visually clean and professional
-
-Slides are relevant to material
-
-Slides effectively demonstrate project
-
-Slides are clear and maintain audience interest
+John Clos:
+* https://www.linkedin.com/in/john-clos-7a41671
+* https://github.com/johnclos
 
 
